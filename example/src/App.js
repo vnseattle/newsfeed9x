@@ -6,9 +6,7 @@ export default class App extends Component {
 
   render () {
 
-    var card__construct = {
-      
-    }
+    var card__construct = ['Intro'];
     
     return (
       <div>

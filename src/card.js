@@ -5,6 +5,7 @@ import styles from './styles.css'
 class Card extends Component {
 
     render(){
+        var {title} = this.props;
 
 
         return (
@@ -15,7 +16,7 @@ class Card extends Component {
 
                     <div className={styles.card__content}>
                     <div className={styles.card__title}>
-                        Nine Inch Nails Live
+                        {title}
                     </div>
                     <p className={styles.card__description}>
                         The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.

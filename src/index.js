@@ -9,7 +9,7 @@ export default class Feeds extends Component {
     this.state = {
       url: props.url,
       page: props.start,
-      data: null,
+      data: [],
     };
   }
 
@@ -32,9 +32,9 @@ export default class Feeds extends Component {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      this.setState({ data });
-
+      var __data = this.state.data;
+      __data = [...__data,...data];
+      this.setState({ data: __data });
       if(data.length > 0 ){ 
         console.log("====", data.length);
         this.setState({ page: data[data.length-1]['Id']})
@@ -47,20 +47,22 @@ export default class Feeds extends Component {
     return url.replace("[[]]", page);
   }
 
+  modifyStruct = (cards) => {
+    var {construct} = this.props;
+    var cardCopys = JSON.stringify(cards);
+    cardCopys = cardCopys.replace(new RegExp(construct[0],"gi"),"title");
+    cards = JSON.parse(cardCopys);
+    return cards;
+  }
 
-  
 
   render() {
-    //const { construct } = this.props;
-    //console.log(construct.url);
+    var cards = this.modifyStruct(this.state.data);
+    let Cards = cards.map( (card,i) =>  <Card key={i} title={card['title']} /> );
 
     return (
       <div>
-       <Card />
-       <Card />
-       <Card />
-       <Card />
-       <Card />
+       {Cards}
        <button onClick={this.load}>load</button>
       </div>
     )
