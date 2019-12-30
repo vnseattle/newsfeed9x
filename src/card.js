@@ -12,11 +12,9 @@ class Card extends Component {
         var types = [];
         var keys = [];
         for(let [key, value] of Object.entries(struct)){
-            //console.log(key, value);
             keys.push(key);
             types.push(value);
-         }
-
+        }
 
         return (
 
@@ -24,9 +22,16 @@ class Card extends Component {
 
                         {
                             types.map((type,i) => {
+                                if( type==='menu'){
+                                    console.log(keys[i]);
+                                    console.log(data[keys[i]]);
+                                    return (
+                                        <div key={i} className={styles.card__title} >{data[keys[i]]}</div>
+                                    )
+                                }
                                 if( type==='h1'){
                                     return (
-                                        <div key={i} className={styles.card__title}>{data[keys[i]]}</div>
+                                        <div key={i} className={styles.card__title} >{data[keys[i]]}</div>
                                     )
                                 }
                                 if( type==='img'){
@@ -37,7 +42,7 @@ class Card extends Component {
 
                                 if( type==='p'){
                                     return (
-                                        <p key={i} className={styles.card__description}>{data[keys[i]]}</p>
+                                        <div key={i} className={styles.card__description}>{data[keys[i]]}</div>
                                     )
                                 }    
                             })

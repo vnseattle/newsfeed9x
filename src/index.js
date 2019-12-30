@@ -23,12 +23,9 @@ export default class Feeds extends Component {
   }
 
   fetchData = () => {
-
     let {url,page} = this.state;
     url = this.modifyURL(url,page);
-    console.log('url: ',url);
 
-    
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -36,10 +33,8 @@ export default class Feeds extends Component {
       __data = [...__data,...data];
       this.setState({ data: __data });
       if(data.length > 0 ){ 
-        console.log("====", data.length);
         this.setState({ page: data[data.length-1]['Id']})
       };
-
     });
   }
 
