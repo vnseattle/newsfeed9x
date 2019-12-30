@@ -5,9 +5,14 @@ import ExampleComponent from 'newsfeed-9x'
 export default class App extends Component {
 
   render () {
+    var card__construct = {
+      Id: 'id',
+      Thumb: 'img',
+      Author: 'h1',
+      Intro: 'p',
+      Author_Id: 'p'
+    };
 
-    var card__construct = ['Intro'];
-    
     return (
       <div>
         <ExampleComponent 

@@ -5,24 +5,45 @@ import styles from './styles.css'
 class Card extends Component {
 
     render(){
-        var {title} = this.props;
+        ///var {title,img,description} = this.props;
+        //var struct = ['title','p','p','p','img'];
+
+        var {struct,data} = this.props;
+        var types = [];
+        var keys = [];
+        for(let [key, value] of Object.entries(struct)){
+            //console.log(key, value);
+            keys.push(key);
+            types.push(value);
+         }
 
 
         return (
 
                     <div className={styles.card}>
 
-                    <img className={styles.card__img} src="https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg" />
+                        {
+                            types.map((type,i) => {
+                                if( type==='h1'){
+                                    return (
+                                        <div key={i} className={styles.card__title}>{data[keys[i]]}</div>
+                                    )
+                                }
+                                if( type==='img'){
+                                    return (
+                                        <img key={i} className={styles.card__img} src={data[keys[i]]} />
+                                    )
+                                }
 
-                    <div className={styles.card__content}>
-                    <div className={styles.card__title}>
-                        {title}
-                    </div>
-                    <p className={styles.card__description}>
-                        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-                    </p>
-                    </div>
-
+                                if( type==='p'){
+                                    return (
+                                        <p key={i} className={styles.card__description}>{data[keys[i]]}</p>
+                                    )
+                                }    
+                            })
+                           
+                        }
+        
                     </div>
 
 
@@ -39,4 +60,26 @@ export default Card;
 
 
 
+/**
+ * 
+ *  
+                             struct.map((item,i) => {
+                                if( item==='title'){
+                                    return (
+                                        <div key={i} className={styles.card__title}>{title}</div>
+                                    )
+                                }
+                                if( item==='img'){
+                                    return (
+                                        <img key={i} className={styles.card__img} src={img} />
+                                    )
+                                }
 
+                                if( item==='p'){
+                                    return (
+                                        <p key={i} className={styles.card__description}>{description}</p>
+                                    )
+                                }    
+                            })
+ * 
+ */

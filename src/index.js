@@ -47,18 +47,16 @@ export default class Feeds extends Component {
     return url.replace("[[]]", page);
   }
 
-  modifyStruct = (cards) => {
-    var {construct} = this.props;
-    var cardCopys = JSON.stringify(cards);
-    cardCopys = cardCopys.replace(new RegExp(construct[0],"gi"),"title");
-    cards = JSON.parse(cardCopys);
-    return cards;
-  }
-
+  
 
   render() {
-    var cards = this.modifyStruct(this.state.data);
-    let Cards = cards.map( (card,i) =>  <Card key={i} title={card['title']} /> );
+    var cards = this.state.data;
+    let Cards = cards.map( (data,i) =>  
+    <Card 
+    key={i}
+    struct={this.props.construct}
+    data={data}
+    /> );
 
     return (
       <div>
