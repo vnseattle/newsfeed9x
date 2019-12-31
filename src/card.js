@@ -22,7 +22,7 @@ class Card extends Component {
 
                         {
                             types.map((type,i) => {
-                                if( type==='menu'){
+                                if( type==='top_post'){
                                     console.log(keys[i]);
                                     console.log(data[keys[i]]);
                                     return (

@@ -6,17 +6,17 @@ export default class App extends Component {
 
   render () {
     var card__construct = {
-      title: 'h1',
-      avatar_name_time: 'menu',
-      body:'p',
+      avatar: "img",
+      name: "h1",
+      img: "img"
 
     };
 
     return (
       <div>
         <ExampleComponent 
-        url='https://jsonplaceholder.typicode.com/posts[[]]'
-        start=''
+        url='http://vnsdev.com/mock/api/page/posts/[[]]/index.php'
+        start='1'
         load={this.load}
         construct={card__construct}
          />
