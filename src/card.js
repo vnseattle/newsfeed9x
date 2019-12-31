@@ -5,8 +5,6 @@ import styles from './styles.css'
 class Card extends Component {
 
     render(){
-        ///var {title,img,description} = this.props;
-        //var struct = ['title','p','p','p','img'];
 
         var {struct,data} = this.props;
         var types = [];
@@ -19,14 +17,27 @@ class Card extends Component {
         return (
 
                     <div className={styles.card}>
+                        
 
                         {
                             types.map((type,i) => {
-                                if( type==='top_post'){
+                                if( type==='cardTop'){
                                     console.log(keys[i]);
+                                    let subKeys = keys[i].split('_');
+
                                     console.log(data[keys[i]]);
                                     return (
-                                        <div key={i} className={styles.card__title} >{data[keys[i]]}</div>
+
+                                        <div key={i} className={styles.card__top}>
+                                            <div className={styles.card__top__avatar}>
+                                                <img src={data[subKeys[0]]} alt='avatar'/>
+                                            </div>
+                                            <div className={styles.card__top__owner}>
+                                                <div className={styles.card__top__owner_name}>{data[subKeys[1]]}</div>
+                                                <div className={styles.card__top__owner_time}>{data[subKeys[2]]}</div>
+                                            </div>
+                                        </div>
+
                                     )
                                 }
                                 if( type==='h1'){
@@ -61,30 +72,3 @@ class Card extends Component {
 }
 
 export default Card;
-
-
-
-
-/**
- * 
- *  
-                             struct.map((item,i) => {
-                                if( item==='title'){
-                                    return (
-                                        <div key={i} className={styles.card__title}>{title}</div>
-                                    )
-                                }
-                                if( item==='img'){
-                                    return (
-                                        <img key={i} className={styles.card__img} src={img} />
-                                    )
-                                }
-
-                                if( item==='p'){
-                                    return (
-                                        <p key={i} className={styles.card__description}>{description}</p>
-                                    )
-                                }    
-                            })
- * 
- */

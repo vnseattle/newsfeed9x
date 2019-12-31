@@ -8,7 +8,8 @@
 }
 
 .card{
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: 2px;
   width: calc(100% - 24px);
@@ -20,6 +21,36 @@
   margin-top: 10px;
   padding: 5px;
 }
+
+.card__top{
+  display: flex;
+  flex-direction: row;
+}
+
+.card__top__avatar{
+  padding: 5px;
+}
+
+.card__top__avatar img{
+  border-radius: 50%;
+  max-height: 40px;
+
+}
+
+.card__top__owner{
+  font-size: 14px;
+  padding: 5px;
+}
+
+.card__top__owner_name{
+  color: rgb(46, 45, 45);
+  font-weight: bold;
+}
+
+.card__top__owner_time{
+  color:gray;
+}
+
 
 
 .card__img{
@@ -36,9 +67,10 @@
 }
 
 .card__description{
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-size: 16px;
-  color: #666;
+  color: rgb(46, 45, 45);
 }
 

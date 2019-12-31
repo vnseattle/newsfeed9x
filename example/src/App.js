@@ -6,10 +6,10 @@ export default class App extends Component {
 
   render () {
     var card__construct = {
-      avatar: "img",
-      name: "h1",
-      img: "img"
-
+      avatar_name_ago: "cardTop",
+      img: "img",
+      like: "p",
+      des: "p"
     };
 
     return (
