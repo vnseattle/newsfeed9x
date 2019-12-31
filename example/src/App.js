@@ -4,6 +4,10 @@ import ExampleComponent from 'newsfeed-9x'
 
 export default class App extends Component {
 
+  name = () => {
+    console.log("kaka");
+  }
+
   render () {
     var card__construct = {
       avatar_name_ago: "cardTop",
@@ -19,6 +23,8 @@ export default class App extends Component {
         start='1'
         load={this.load}
         construct={card__construct}
+
+        name={this.name}
          />
       </div>
     )

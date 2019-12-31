@@ -4,6 +4,7 @@ import styles from './styles.css'
 
 class Card extends Component {
 
+
     render(){
 
         var {struct,data} = this.props;
@@ -32,7 +33,7 @@ class Card extends Component {
                                             <div className={styles.card__top__avatar}>
                                                 <img src={data[subKeys[0]]} alt='avatar'/>
                                             </div>
-                                            <div className={styles.card__top__owner}>
+                                            <div className={styles.card__top__owner} onClick={this.props.name}>
                                                 <div className={styles.card__top__owner_name}>{data[subKeys[1]]}</div>
                                                 <div className={styles.card__top__owner_time}>{data[subKeys[2]]}</div>
                                             </div>
