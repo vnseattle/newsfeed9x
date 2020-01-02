@@ -42,22 +42,25 @@ export default class Feeds extends Component {
     return url.replace("[[]]", page);
   }
 
-  name = () => {
-    if(this.props.name()){
-
-    }
-  }
 
   render() {
 
     var cards = this.state.data;
+
+    // Mapping ID 
+    var res = JSON.stringify(cards).toString().split(this.props._ID).join("id");
+    cards = JSON.parse(res);
+    
+
+    // Render cards 
     let Cards = cards.map( (data,i) =>  
     <Card 
-    key={i}
+    key={data.id}
+    id={data.id}
     struct={this.props.construct}
     data={data}
 
-    name={this.props.name ? this.name : null }
+    onClick={this.props.onClick ? this.props.onClick  : null }
 
     /> );
 

@@ -4,27 +4,29 @@ import ExampleComponent from 'newsfeed-9x'
 
 export default class App extends Component {
 
-  name = () => {
-    console.log("kaka");
+  onClick = (e) => {
+    console.log(e.target.dataset.type);
+    console.log(e.target.dataset.id);
+    console.log(e.target.dataset.url);
   }
 
   render () {
     var card__construct = {
-      avatar_name_ago: "cardTop",
-      img: "img",
-      like: "p",
-      des: "p"
+      avatar_des_ago: "cardInfo",
+      img: "image",
+      __:"response"
     };
 
     return (
       <div>
         <ExampleComponent 
+        _ID='pid'
         url='http://vnsdev.com/mock/api/page/posts/[[]]/index.php'
         start='1'
         load={this.load}
         construct={card__construct}
 
-        name={this.name}
+        onClick={this.onClick}
          />
       </div>
     )

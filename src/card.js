@@ -4,62 +4,86 @@ import styles from './styles.css'
 
 class Card extends Component {
 
+    /*** JSX COMPONETS */
+    jInfo = (i,keys,data) =>{
+        //console.log(keys[i]);
+        let subKeys = keys[i].split('_');
+        //console.log(data[keys[i]]);
+        return (
+            <div key={i} className={styles.card__top}>
+                <div className={styles.card__top__avatar}>
+                    <img src={data[subKeys[0]]} alt='avatar'/>
+                </div>
+                <div  className={styles.card__top__info}>
+                    <div data-id={i} className={styles.card__top__info_headline} >{data[subKeys[1]]}</div>
+                    <div className={styles.card__top__info_subline} >{data[subKeys[2]] ? data[subKeys[2]] : null }</div>
+                    <div className={styles.card__top__info_subline}>{data[subKeys[3]] ? data[subKeys[3]] : null }</div>
+
+                </div>
+            </div>
+        )
+
+    }
+
+    jTitle = (key,content)=>{
+        return (
+            <div key={key} className={styles.card__title} onClick={this.props.onClick} >{content}</div>
+        )
+    }
+
+    jParagraph = (key,content)=>{
+        return (
+            <div key={key} className={styles.card__description} onClick={this.props.onClick} >{content}</div>
+        )
+    }
+
+    jImage = (id,src)=>{
+        return (
+            <img key={id} data-type="IMAGE" data-id={id} data-url={src} className={styles.card__img} src={src} onClick={this.props.onClick} />
+        )
+    }
+
+    jResponse = (id,i) => {
+        return (
+            <div key={id+"_"+i} className={styles.card__response}>
+                 <div data-type="LIKE" data-id={id} className={styles.card__response__like} onClick={this.props.onClick}>Like</div>
+                 <div data-type="SHARE" data-id={id} className={styles.card__response__share} onClick={this.props.onClick}>Share</div>
+            </div>
+        )
+    }
+
+    
+
+
 
     render(){
 
-        var {struct,data} = this.props;
+        var {struct,data, id} = this.props;
         var types = [];
         var keys = [];
         for(let [key, value] of Object.entries(struct)){
             keys.push(key);
             types.push(value);
         }
+        
+       
 
         return (
 
-                    <div className={styles.card}>
-                        
-
+                    <div data-type='CARD' data-id='ID' className={styles.card} >
                         {
+
                             types.map((type,i) => {
-                                if( type==='cardTop'){
-                                    console.log(keys[i]);
-                                    let subKeys = keys[i].split('_');
-
-                                    console.log(data[keys[i]]);
-                                    return (
-
-                                        <div key={i} className={styles.card__top}>
-                                            <div className={styles.card__top__avatar}>
-                                                <img src={data[subKeys[0]]} alt='avatar'/>
-                                            </div>
-                                            <div className={styles.card__top__owner} onClick={this.props.name}>
-                                                <div className={styles.card__top__owner_name}>{data[subKeys[1]]}</div>
-                                                <div className={styles.card__top__owner_time}>{data[subKeys[2]]}</div>
-                                            </div>
-                                        </div>
-
-                                    )
-                                }
-                                if( type==='h1'){
-                                    return (
-                                        <div key={i} className={styles.card__title} >{data[keys[i]]}</div>
-                                    )
-                                }
-                                if( type==='img'){
-                                    return (
-                                        <img key={i} className={styles.card__img} src={data[keys[i]]} />
-                                    )
-                                }
-
-                                if( type==='p'){
-                                    return (
-                                        <div key={i} className={styles.card__description}>{data[keys[i]]}</div>
-                                    )
+                                if( type==='cardInfo'){return ( this.jInfo(i,keys,data))
+                                }else if( type==='title'){ return ( this.jTitle(i,data[keys[i]]) )
+                                }else if( type==='image'){ return ( this.jImage(id,data[keys[i]]) )
+                                }else if( type==='paragraph'){ return ( this.jParagraph(i,data[keys[i]]) )
+                                }else if( type==='response'){ return ( this.jResponse(id,i) )
                                 }    
                             })
-                           
                         }
+
+                        
         
                     </div>
 
