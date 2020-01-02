@@ -12,8 +12,10 @@ export default class App extends Component {
 
   render () {
     var card__construct = {
-      avatar_des_ago: "cardInfo",
+      avatar_name_ago: "cardInfo",
       img: "image",
+      cap: "title",
+      des: "paragraph",
       __:"response"
     };
 
