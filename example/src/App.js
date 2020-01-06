@@ -25,6 +25,7 @@ export default class App extends Component {
         url='http://vnseattle.com/vnsapp/GetPostsNewsFeed.php?crid=[[]]&tagid=0'
         start='0'
         pagination='cursor'
+        infinityScroll='true'
         construct={card__construct}
 
         onClick={this.onClick}

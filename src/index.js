@@ -3,19 +3,28 @@ import Card from './card'
 import styles from './styles.css'
 
 export default class Feeds extends Component {
- 
+  _isMounted = true;
+
   constructor(props) {
     super(props);
     this.state = {
       url: props.url,
       page: this.props.start,
       data: [],
+      isScrolled: false
     };
   }
 
 
   componentDidMount = () => {
     this.load();
+    if(this.props.infinityScroll==='true'){
+      window.addEventListener('scroll',this.handleScroll);
+    }
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   load = () => {
@@ -55,6 +64,41 @@ export default class Feeds extends Component {
     return cards;
   }
 
+  // Set scrolling status 
+  setScrolled(status){
+    if (this._isMounted) {
+        this.setState({
+            isScrolled: status
+        });
+    }
+  }
+
+   getScrolled =() =>{
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    const scrolled = winScroll / height;
+    return scrolled*100
+  }
+
+   // Handle the scrolling 
+   handleScroll = () => {
+    var {isScrolled} = this.state;
+    
+    if (this._isMounted) {
+        // Hit the bottom, start to load more 
+        if(this.getScrolled()>=95 && !isScrolled){
+            this.setScrolled(true); // disable the scrolling 
+            this.load();
+        }
+
+        // Re-active the scrolling again 
+        if(this.getScrolled()>75  && isScrolled){
+            this.setScrolled(false);
+        }
+    }
+    
+  }
+
 
   render() {
 
@@ -69,7 +113,6 @@ export default class Feeds extends Component {
     data={data}
 
     onClick={this.props.onClick ? this.props.onClick  : null }
-
     /> );
 
     return (

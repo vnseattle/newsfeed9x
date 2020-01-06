@@ -38,7 +38,7 @@
 }
 
 .card__top__info{
-  font-size: 14px;
+  font-size: 13px;
   padding: 5px;
 }
 
@@ -62,7 +62,7 @@
   margin-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 21px;
+  font-size: 17px;
   line-height: 1.2;
   color: #222;
 }
@@ -87,7 +87,7 @@
 
 .card__response__like{
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   padding: 7px;
   flex-grow: 1;
   cursor: pointer;
@@ -96,7 +96,7 @@
 
 .card__response__share{
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   padding: 7px;
   flex-grow: 1;
   cursor: pointer;
