@@ -5,14 +5,14 @@ import styles from './styles.css'
 class Card extends Component {
 
     /*** JSX COMPONETS */
-    jInfo = (i,keys,data) =>{
+    jInfo = (id,i,keys,data) =>{
         //console.log(keys[i]);
         let subKeys = keys[i].split('_');
         //console.log(data[keys[i]]);
         return (
-            <div key={i} className={styles.card__top}>
+            <div key={id+"_"+i} className={styles.card__top}>
                 <div className={styles.card__top__avatar}>
-                    <img src={data[subKeys[0]]} alt='avatar'/>
+                { data[subKeys[0]] != null ? <img src={data[subKeys[0]]} alt='avatar'/> : null}
                 </div>
                 <div  className={styles.card__top__info}>
                     <div data-id={i} className={styles.card__top__info_headline} >{data[subKeys[1]]}</div>
@@ -41,9 +41,9 @@ class Card extends Component {
         )
     }
 
-    jImage = (id,src)=>{
+    jImage = (id,i,src)=>{
         return (
-            <img key={id} 
+            <img key={id+"_"+i}
             data-type="IMAGE" 
             data-id={id} 
             data-url={src} 
@@ -76,13 +76,13 @@ class Card extends Component {
 
         return (
 
-                    <div data-type='CARD' data-id='ID' className={styles.card} >
+                    <div  data-type='CARD' data-id='ID' className={styles.card} >
                         {
 
                             types.map((type,i) => {
-                                if( type==='cardInfo'){return ( this.jInfo(i,keys,data))
+                                if( type==='cardInfo'){return ( this.jInfo(id,i,keys,data))
                                 }else if( type==='title'){ return ( this.jTitle(id,i,data[keys[i]]) )
-                                }else if( type==='image'){ return ( this.jImage(id,data[keys[i]]) )
+                                }else if( type==='image'){ return ( this.jImage(id,i,data[keys[i]]) )
                                 }else if( type==='paragraph'){ return ( this.jParagraph(id,i,data[keys[i]]) )
                                 }else if( type==='response'){ return ( this.jResponse(id,i) )
                                 }    

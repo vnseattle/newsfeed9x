@@ -12,20 +12,19 @@ export default class App extends Component {
 
   render () {
     var card__construct = {
-      avatar_name_ago: "cardInfo",
-      img: "image",
-      cap: "title",
-      des: "paragraph",
+      null_Author_null: "cardInfo",
+      Thumb: "image",
+      Intro: "title",
       __:"response"
     };
 
     return (
       <div>
         <ExampleComponent 
-        _ID='pid'
-        url='http://vnsdev.com/mock/api/page/posts/[[]]/index.php'
-        start='1'
-        load={this.load}
+        _ID='Id'
+        url='http://vnseattle.com/vnsapp/GetPostsNewsFeed.php?crid=[[]]&tagid=0'
+        start='0'
+        pagination='cursor'
         construct={card__construct}
 
         onClick={this.onClick}
