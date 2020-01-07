@@ -42,11 +42,11 @@ class Card extends Component {
     }
 
     jImage = (id,i,src)=>{
+        
         return (
             <img key={id+"_"+i}
             data-type="IMAGE" 
             data-id={id} 
-            data-url={src} 
             className={styles.card__img} 
             src={src} onClick={this.props.onClick} />
         )
@@ -76,7 +76,7 @@ class Card extends Component {
 
         return (
 
-                    <div  data-type='CARD' data-id='ID' className={styles.card} >
+                    <div id={'card_'+id}  data-type='CARD' data-id={id} className={styles.card} >
                         {
 
                             types.map((type,i) => {
@@ -85,11 +85,16 @@ class Card extends Component {
                                 }else if( type==='image'){ return ( this.jImage(id,i,data[keys[i]]) )
                                 }else if( type==='paragraph'){ return ( this.jParagraph(id,i,data[keys[i]]) )
                                 }else if( type==='response'){ return ( this.jResponse(id,i) )
-                                }    
+                                }
+                                    
                             })
                         }
 
+                        
+
                     </div>
+
+                    
 
 
         )
