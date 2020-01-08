@@ -13,17 +13,7 @@ npm install --save newsfeed-9x
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
 
-import MyComponent from 'newsfeed-9x'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
 ```
 
 ## License
