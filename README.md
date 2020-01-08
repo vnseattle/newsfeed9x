@@ -12,7 +12,7 @@ npm install --save newsfeed-9x
 
 ## Usage
 
-```jsx
+```bash
 import React, { Component } from 'react'
 
 import ExampleComponent from 'newsfeed-9x'
@@ -51,6 +51,7 @@ export default class App extends Component {
     )
   }
 }
+
 ```
 
 ## License
