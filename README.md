@@ -26,7 +26,7 @@ Ensure the component has three props to get started:
 - `layout`: the layout you want to display
 
 ##### Example 1 : Display a list of text from the API
-#
+
 ```javascript
 /* https://jsonplaceholder.typicode.com/todos */
 [
@@ -40,7 +40,7 @@ Ensure the component has three props to get started:
 ```
 
 ##### React
-#
+
 ```javascript
 import React, { Component } from 'react'
 import ExampleNewsfeed from 'newsfeed-9x'
@@ -61,7 +61,7 @@ export default class App extends Component {
 ```
 
 ##### Result 
-#
+
 <img src='http://vnsdev.com/npm/newsfeed-9x/ex1.png'>
 
 ## Work With Layouts
@@ -70,11 +70,12 @@ In most cases, we all want to display more information and in different orders. 
 The layout is designed as an `json object` with the `key` from your API object, and the `value` is the component type that we have already created for you.
 
 ##### Overview 
-#
-<img src='http://vnsdev.com/npm/newsfeed-9x/ex1.png'>
+
+<img src='http://vnsdev.com/npm/newsfeed-9x/overview_struct.png'>
+
 ##### Example 2
-#
-```json
+
+```javascript
 [
   {
     "id": "1",
@@ -87,8 +88,9 @@ The layout is designed as an `json object` with the `key` from your API object, 
   }
  ]
 ```
+
 #### React
-#
+
 ```javascript
 import React, { Component } from 'react'
 import ExampleNewsfeed from 'newsfeed-9x'
@@ -113,7 +115,7 @@ export default class App extends Component {
 ```
 
 ##### Result 
-#
+
 <img src='http://vnsdev.com/npm/newsfeed-9x/ex2.png'>
 
 ##### Re-order your layout
@@ -129,7 +131,6 @@ In some cases, you do not want a name and caption next to each other. With this 
 ```
 ##### Result
 <img src='http://vnsdev.com/npm/newsfeed-9x/ex2_1.png'>
-
 
 ### Example 3
 
