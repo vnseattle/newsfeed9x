@@ -21,12 +21,12 @@ npm install --save newsfeed-9x
 ## Quick Start
 
 Ensure the component has three props to get started:
-•	`id`: the ID of each object
-•	`api`: the URL of your API to fetch data
-•	`layout`: the layout you want to display
+- `id`: the ID of each object
+- `api`: the URL of your API to fetch data
+- `layout`: the layout you want to display
 
-### Example 1 : Display a list of text from the API
-
+##### Example 1 : Display a list of text from the API
+#
 ```javascript
 /* https://jsonplaceholder.typicode.com/todos */
 [
@@ -38,8 +38,9 @@ Ensure the component has three props to get started:
   }
  ]
 ```
-<img src='http://vnsdev.com/npm/newsfeed-9x/ex1.png'>
 
+##### React
+#
 ```javascript
 import React, { Component } from 'react'
 import ExampleNewsfeed from 'newsfeed-9x'
@@ -59,9 +60,20 @@ export default class App extends Component {
 }
 ```
 
+##### Result 
+#
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex1.png'>
 
-### Example 2
+## Work With Layouts
+In most cases, we all want to display more information and in different orders. This newsfeed component supports you in having many standard layouts on the newsfeed.
 
+The layout is designed as an `json object` with the `key` from your API object, and the `value` is the component type that we have already created for you.
+
+##### Overview 
+#
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex1.png'>
+##### Example 2
+#
 ```json
 [
   {
@@ -75,8 +87,8 @@ export default class App extends Component {
   }
  ]
 ```
-
-
+#### React
+#
 ```javascript
 import React, { Component } from 'react'
 import ExampleNewsfeed from 'newsfeed-9x'
@@ -100,6 +112,13 @@ export default class App extends Component {
 }
 ```
 
+##### Result 
+#
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex2.png'>
+
+##### Re-order your layout
+In some cases, you do not want a name and caption next to each other. With this component, you can display a name, picture, or caption by adjusting the layout object.
+
 ```javascript
 {
   name:"TextBold",
@@ -108,6 +127,9 @@ export default class App extends Component {
 } 
       
 ```
+##### Result
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex2_1.png'>
+
 
 ### Example 3
 
