@@ -305,7 +305,7 @@ export default class App extends Component {
 
  *a component has bind functions to listen to events.
 
-#### Upcoming feature
+#### Upcoming features
 - Video: a video
 - VideoYouTube: a video on YouTube
 - Button: a button with your text
@@ -315,4 +315,4 @@ export default class App extends Component {
 
 ## License
 
-MIT © [Henry](https://github.com/Henry)
+MIT © [Henry Ng](https://github.com/vnseattle)
