@@ -87,27 +87,25 @@ export default class App extends Component {
 ```
 
 ```javascript
-
-         {
-           name:"TextBold",
-		       imageUrl:"RectangleImage",
-           caption:"Paragraph"
-         } 
+{
+  name:"TextBold",
+  imageUrl:"RectangleImage",
+  caption:"Paragraph"
+} 
       
-}
 ```
 
 ### Example 3
 
 ```javascript
 
-       layout={ 
-         {
-           avatar_name_createdAt: "AvatarNameDate",
-           imageUrl: "RectangleImage",
-           caption: "Paragraph"
-         } 
-        }
+layout={ 
+  {
+    avatar_name_createdAt: "AvatarNameDate",
+    imageUrl: "RectangleImage",
+    caption: "Paragraph"
+  } 
+}
 ```
 
 ### Example 4
@@ -119,29 +117,29 @@ http://5dea7b020710f800142103a7.mockapi.io/page_...
 ```
 
 ```bash
-	api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
-  start='1'
-  pagination='offset'
+api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
+start='1'
+pagination='offset'
 ```
 
 ```bash
-  pagination='cursor'
+pagination='cursor'
 ```
 
 ```javascript
 <ExampleNewsfeed 
-       id='id'
-       api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
-       start='1'
-       pagination='offset'
-       layout={ 
-         {
-           avatar_name_createdAt:"AvatarNameDate",
-           imageUrl:"RectangleImage",
-           caption:"Paragraph"
-         } 
-        }
- />
+  id='id'
+  api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
+  start='1'
+  pagination='offset'
+  layout={ 
+    {
+      avatar_name_createdAt:"AvatarNameDate",
+      imageUrl:"RectangleImage",
+      caption:"Paragraph"
+    } 
+  }
+/>
 ```
 
 
@@ -160,23 +158,24 @@ http://5dea7b020710f800142103a7.mockapi.io/page_...
       "first_name": "Michael",
       "last_name": "Lawson",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
-    },
+    }
+}
 ```
 
 
 ```javascript
 <ExampleNewsfeed 
-        id='id'
-        api='https://reqres.in/api/users?page=[[]]'
-        dataPoint='data'
-        start='1'
-        pagination='offset'
-        layout={ 
-          {
-            email:"Paragraph"
-          } 
-        }
-      />
+  id='id'
+  api='https://reqres.in/api/users?page=[[]]'
+  dataPoint='data'
+  start='1'
+  pagination='offset'
+  layout={ 
+    {
+      email:"Paragraph"
+    } 
+  }
+/>
 ```
 
 
