@@ -143,6 +143,41 @@ http://5dea7b020710f800142103a7.mockapi.io/page_...
         }
  />
 ```
+
+
+### Example 5
+
+```json
+{
+  "page": 2,
+  "per_page": 6,
+  "total": 12,
+  "total_pages": 2,
+  "data": [
+    {
+      "id": 7,
+      "email": "michael.lawson@reqres.in",
+      "first_name": "Michael",
+      "last_name": "Lawson",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+    },
+```
+
+
+```javascript
+<ExampleNewsfeed 
+        id='id'
+        api='https://reqres.in/api/users?page=[[]]'
+        start='1'
+        pagination='offset'
+        child='data'
+        layout={ 
+          {
+            email:"Paragraph"
+          } 
+        }
+      />
+```
 ## License
 
 MIT © [Henry](https://github.com/Henry)
