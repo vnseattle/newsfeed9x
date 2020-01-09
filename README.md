@@ -86,7 +86,58 @@ export default class App extends Component {
 }
 ```
 
+```javascript
 
+         {
+           name:"TextBold",
+		       imageUrl:"RectangleImage",
+           caption:"Paragraph"
+         } 
+      
+}
+```
+
+### Example 3
+
+```javascript
+
+       layout={ 
+         {
+           avatar_name_createdAt: "AvatarNameDate",
+           imageUrl: "RectangleImage",
+           caption: "Paragraph"
+         } 
+        }
+```
+
+### Example 4
+
+```bash
+http://5dea7b020710f800142103a7.mockapi.io/page_1
+http://5dea7b020710f800142103a7.mockapi.io/page_2
+http://5dea7b020710f800142103a7.mockapi.io/page_...
+```
+
+```bash
+	api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
+    start='1'
+```
+
+
+```javascript
+<ExampleNewsfeed 
+       id='id'
+       api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
+       start='1'
+       layout={ 
+         {
+           avatar_name_createdAt:"AvatarNameDate",
+           imageUrl:"RectangleImage",
+           caption:"Paragraph"
+         } 
+        }
+ />
+```
 ## License
 
 MIT © [Henry](https://github.com/Henry)
