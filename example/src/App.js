@@ -6,9 +6,13 @@ export default class App extends Component {
     return (
       <ExampleNewsfeed 
        id='id'
-       api='https://jsonplaceholder.typicode.com/todos'
+       api='http://5dea7b020710f800142103a7.mockapi.io/posts'
        layout={ 
-         {title:"TextBold"} 
+         {
+           name:"TextBold",
+           caption:"Paragraph",
+           imageUrl:"RectangleImage"
+         } 
         }
       />
     )
