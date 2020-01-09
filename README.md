@@ -120,15 +120,20 @@ http://5dea7b020710f800142103a7.mockapi.io/page_...
 
 ```bash
 	api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
-    start='1'
+  start='1'
+  pagination='offset'
 ```
 
+```bash
+  pagination='cursor'
+```
 
 ```javascript
 <ExampleNewsfeed 
        id='id'
        api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
        start='1'
+       pagination='offset'
        layout={ 
          {
            avatar_name_createdAt:"AvatarNameDate",
