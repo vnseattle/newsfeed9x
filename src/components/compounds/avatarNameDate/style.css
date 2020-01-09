@@ -1,0 +1,29 @@
+
+.card__top{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .card__top__avatar{
+    padding: 5px;
+  }
+  
+  .card__top__avatar img{
+    border-radius: 50%;
+    max-height: 40px;
+  
+  }
+  
+  .card__top__info{
+    font-size: 13px;
+    padding: 5px;
+  }
+  
+  .card__top__info_headline{
+    color: rgb(46, 45, 45);
+    font-weight: bold;
+  }
+  
+  .card__top__info_subline{
+    color:gray;
+  }

@@ -1,0 +1,9 @@
+.textBold {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 17px;
+    line-height: 1.2;
+    color: black;
+}

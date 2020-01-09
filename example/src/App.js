@@ -1,5 +1,28 @@
 import React, { Component } from 'react'
+import ExampleNewsfeed from 'newsfeed-9x'
 
+export default class App extends Component {
+  render () {
+    return (
+      <ExampleNewsfeed 
+       id='id'
+       api='https://jsonplaceholder.typicode.com/todos'
+       layout={ 
+         {title:"TextBold"} 
+        }
+      />
+    )
+  }
+}
+
+
+
+
+
+
+
+
+/*import React, { Component } from 'react'
 import ExampleComponent from 'newsfeed-9x'
 
 export default class App extends Component {
@@ -13,10 +36,7 @@ export default class App extends Component {
 
   render () {
     var card__construct = {
-      imageUrl: "image",
-      avatar_name_createdAt_location: "cardInfo",
-      caption: "title",
-      __:"response"
+      imageUrl: "RectangleImage"
     }
 
     return (
@@ -28,11 +48,11 @@ export default class App extends Component {
         pagination='page'
         infinityScroll='true'
         layout={card__construct}
-        /*child='data'*/
+        child='data'
 
         onClick={this.onClick}
          />
       </div>
     )
   }
-}
+}*/
