@@ -76,6 +76,8 @@ The layout is designed as an `json object` with the `key` from your API object, 
 ##### Example 2
 
 ```javascript
+
+/* http://5dea7b020710f800142103a7.mockapi.io/posts */
 [
   {
     "id": "1",
@@ -103,9 +105,9 @@ export default class App extends Component {
        api='http://5dea7b020710f800142103a7.mockapi.io/posts'
        layout={ 
          {
-           name:"TextBold",
-           caption:"Paragraph",
-           imageUrl:"RectangleImage"
+           name:"TextBold", // 1 
+           caption:"Paragraph",  //  2
+           imageUrl:"RectangleImage"  // 3 
          } 
         }
       />
@@ -123,16 +125,21 @@ In some cases, you do not want a name and caption next to each other. With this 
 
 ```javascript
 {
-  name:"TextBold",
-  imageUrl:"RectangleImage",
-  caption:"Paragraph"
+  name:"TextBold", // 1
+  imageUrl:"RectangleImage", // 3
+  caption:"Paragraph" // 2
 } 
       
 ```
 ##### Result
 <img src='http://vnsdev.com/npm/newsfeed-9x/ex2_1.png'>
 
-### Example 3
+## Component Types
+We have designed a list of component types for you to use; ensure to follow the structure of each component type. Some components only have one element, but some have multiple.
+
+Example 3: An updated layout from example 2 with the AvatarNameDate component with an avatar, name, date and time in one row.
+
+#### Example 3
 
 ```javascript
 
@@ -144,9 +151,19 @@ layout={
   } 
 }
 ```
+##### Result
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex3.png'>
 
-### Example 4
+>At the bottom of this file, all of the instructions for the component types are detailed.
 
+## Work with API
+#### Double Square Brackets `[[]]`
+The `[[]]` is used to identify your dynamic variable for pagination, which is usually the `page number` you are using (offset pagination), or the `last ID` (when you are using the cursor pagination technique).
+
+__Note__: if you add a `[[]]` to the API, you need to add a `start` which tells the API where to start the data, and you also need to add the `pagination type` to tell the system which pagination you want to use.
+
+Let see these examples
+##### Example 4
 ```bash
 http://5dea7b020710f800142103a7.mockapi.io/page_1
 http://5dea7b020710f800142103a7.mockapi.io/page_2
@@ -157,10 +174,6 @@ http://5dea7b020710f800142103a7.mockapi.io/page_...
 api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
 start='1'
 pagination='offset'
-```
-
-```bash
-pagination='cursor'
 ```
 
 ```javascript
@@ -179,10 +192,26 @@ pagination='cursor'
 />
 ```
 
+##### Result 
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex4.png'>
 
-### Example 5
+#### Pagination
+We support two options of pagination, which are offset and cursor.
+- If you are using offset, every time you fetch the data, the start number will be increased by 1 for each call. `pagination='offset'`
 
-```json
+
+- If you are using cursor, the start number will be replaced by the last ID of the data for each call. `pagination='cursor'`
+
+
+#### Using offset 
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex4_1.png'>
+
+#### DataPoint (option)
+For some reason, your API returns a JSON file with the information of the request and an array of JSON data, which will be used to display what we want. We can point to that data by using the attributed child of the component.
+
+##### Example 5
+
+```javascript
 {
   "page": 2,
   "per_page": 6,
@@ -200,7 +229,6 @@ pagination='cursor'
 }
 ```
 
-
 ```javascript
 <ExampleNewsfeed 
   id='id'
@@ -215,7 +243,13 @@ pagination='cursor'
   }
 />
 ```
+##### Infinity Scroll (option)
+Here is an alternative to start the call to the API to get the following data; set the `InfinityScroll = ‘true’`, which will load the data every time the user scrolls near the bottom.
 
+## Actions
+On the newsfeed, we want to do some action when the user clicks buttons such as Like, Share, or when they click images, etc. By adding the props __`onClick`__, the function will return the event of the object that the user clicks on.
+
+> Two __`datasets`__: __`type`__ and __`id`__ will be returned.
 
 ### Example 8
 
@@ -252,6 +286,12 @@ export default class App extends Component {
   }
 }
 ```
+
+##### Result 
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex8.png'>
+
+
+
 ## License
 
 MIT © [Henry](https://github.com/Henry)
