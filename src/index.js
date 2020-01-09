@@ -40,15 +40,15 @@ export default class Feeds extends Component {
   fetchData = () => {
     let {url,page} = this.state;
     url = this.modifyURL(url,page);
-    console.log("FEEE",url);
+    console.log("FETCH",url);
 
 
 
     fetch(url)
     .then(response => response.json())
     .then(data => {
-      if(this.props.child){
-        data = data[this.props.child];
+      if(this.props.dataPoint){
+        data = data[this.props.dataPoint];
       }
       data = this.modifyID(data);
       var __data = this.state.data;
