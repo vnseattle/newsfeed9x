@@ -1,6 +1,7 @@
 {
   "name": "newsfeed-9x",
-  "version": "1.2.0",
+  "keywords": ["newsfeed","social network","infinity scroll","feed","card"],
+  "version": "1.2.1",
   "description": "build your newsfeed",
   "author": "Henry",
   "license": "MIT",
