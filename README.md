@@ -137,10 +137,9 @@ In some cases, you do not want a name and caption next to each other. With this 
 ## Component Types
 We have designed a list of component types for you to use; ensure to follow the structure of each component type. Some components only have one element, but some have multiple.
 
-Example 3: An updated layout from example 2 with the AvatarNameDate component with an avatar, name, date and time in one row.
-
 #### Example 3
-
+ An updated layout from *example 2* with the `AvatarNameDate` component with an `avatar`, `name`, `date and time` in one row.
+ 
 ```javascript
 
 layout={ 
@@ -207,7 +206,7 @@ We support two options of pagination, which are offset and cursor.
 <img src='http://vnsdev.com/npm/newsfeed-9x/ex4_1.png'>
 
 #### DataPoint (option)
-For some reason, your API returns a JSON file with the information of the request and an array of JSON data, which will be used to display what we want. We can point to that data by using the attributed child of the component.
+For some reason, your API returns a JSON file with the information of the request and an array of JSON data, which will be used to display what we want. We can point to that data by using the attributed __`dataPoint`__ of the component.
 
 ##### Example 5
 
@@ -290,7 +289,29 @@ export default class App extends Component {
 ##### Result 
 <img src='http://vnsdev.com/npm/newsfeed-9x/ex8.png'>
 
+## Component Types
 
+##### Single Element
+- Text: a simple line of text
+- TextBold: a line of text in bold weight
+- Paragraph: a paragraph
+- *ReactangleImage: an image with a width of 100%
+
+
+##### Compound Elements
+- *AvatarNameDate: a compound of an avatar, name, date, and layout. 
+> This is a trendy layout that you may see on Facebook and YouTube newsfeeds.
+- *ActLikeShare: a row with Like and Share buttons.
+
+ *a component has bind functions to listen to events.
+
+#### Upcoming feature
+- Video: a video
+- VideoYouTube: a video on YouTube
+- Button: a button with your text
+- IconButton: a button with your text and icons
+- Comment 
+- Dark Style
 
 ## License
 
