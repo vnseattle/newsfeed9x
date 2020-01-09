@@ -1,8 +1,16 @@
 # newsfeed-9x
 
-> build your newsfeed
+A Faster Way To Build Your `Newsfeed` In Your React App
 
 [![NPM](https://img.shields.io/npm/v/newsfeed-9x.svg)](https://www.npmjs.com/package/newsfeed-9x) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+
+Features:
+  - Mapping your `JSON structure` from your `API` to the feed
+  - Combined “read more” function
+  - Infinity Scroll option
+  - Customized layout orders
+  - Supports popular components
 
 ## Install
 
@@ -10,21 +18,27 @@
 npm install --save newsfeed-9x
 ```
 
-## Usage
+## Quick Start
 
-### Example 1
+Ensure the component has three props to get started:
+•	`id`: the ID of each object
+•	`api`: the URL of your API to fetch data
+•	`layout`: the layout you want to display
 
-```json
+### Example 1 : Display a list of text from the API
+
+```javascript
+/* https://jsonplaceholder.typicode.com/todos */
 [
   {
     "userId": 1,
     "id": 1,
-    "title": "delectus aut autem",
+    "title": "delectus aut ...", // display this title
     "completed": false
   }
  ]
 ```
-
+<img src='http://vnsdev.com/npm/newsfeed-9x/ex1.png'>
 
 ```javascript
 import React, { Component } from 'react'
