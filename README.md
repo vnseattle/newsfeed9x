@@ -159,6 +159,7 @@ pagination='cursor'
       "last_name": "Lawson",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
     }
+  ]
 }
 ```
 
