@@ -2,7 +2,7 @@
 
 A Faster Way To Build Your `Newsfeed` In Your React App
 
-<img src='http://vnsdev.com/npm/newsfeed-9x/ad_newsfeed.png'>
+<img src='http://vnsdev.com/npm/newsfeed-9x/ad_newsfeed_1.png'>
 
 [![NPM](https://img.shields.io/npm/v/newsfeed-9x.svg)](https://www.npmjs.com/package/newsfeed-9x) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
