@@ -11,6 +11,7 @@ import ActLikeShare from './components/actions/actLikeShare'
 import RectangleImage from './components/images/rectangleImage'
 import Paragraph from './components/texts/paragraph'
 import AvatarNameDate from './components/compounds/avatarNameDate'
+import CustomButton from './components/actions/customButton'
 import styles from './styles.css'
 
 
@@ -21,13 +22,14 @@ class Card extends Component {
         var {struct,data,id} = this.props;
         var types = []; // types of the components 
         var keys = [];  // the keys from api 
-
         // Layout analysis 
+
         for(let [key, value] of Object.entries(struct)){
+           
             keys.push(key);
             types.push(value);
         }
-        
+     
         return (
 
                     <div id={'card_'+id}  data-type='CARD' data-id={id} className={styles.card} >
@@ -56,6 +58,11 @@ class Card extends Component {
                                     <ActLikeShare key={id+"_"+i}  id={id} i={i} 
                                     onClick={this.props.onClick}/>)
                                 }  
+                                else if( type==='CustomButton'){ 
+                                    return ( 
+                                    <CustomButton key={id+"_"+i}  id={id} i={i} 
+                                    onClick={this.props.onClick} name ={keys[i]}/>)
+                                } 
                             })
                         }
                     </div>

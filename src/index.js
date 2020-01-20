@@ -148,7 +148,6 @@ export default class Feeds extends Component {
 
     var cards = this.state.data;
     var noScroll = this.state.isEnd;
-
     // render cards 
     let Cards = cards.map( (data,i) =>  
     <Card 

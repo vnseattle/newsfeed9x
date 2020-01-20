@@ -21,6 +21,7 @@ export default class App extends Component {
            avatar_name_createdAt:"AvatarNameDate",
            imageUrl:"RectangleImage",
            caption:"TextBold",
+           comment:"CustomButton",
            __:"ActLikeShare"
          } 
         }
