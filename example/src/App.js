@@ -8,24 +8,46 @@ export default class App extends Component {
     console.log(e.target.dataset.id);
   }
 
-  render () {
+  render() {
     return (
-      <ExampleNewsfeed 
-       id='id'
-       api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
-       start='1'
-       pagination='offset'
-       infinityScroll='true'
-       layout={ 
-         {
-           avatar_name_createdAt:"AvatarNameDate",
-           imageUrl:"RectangleImage",
-           caption:"TextBold",
-           __:"ActLikeShare"
-         } 
-        }
-      onClick={this.actEvent}
-      />
+      <div className="app-container">
+        <div className="list-container">
+          <ExampleNewsfeed
+            id='id'
+            api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
+            start='1'
+            pagination='offset'
+            infinityScroll='true'
+            layout={
+              {
+                classes: 'main-list',
+                items: [{
+                  propName: 'avatar_name_createdAt',
+                  type: 'AvatarNameDate'
+                },
+                {
+                  propName: 'imageUrl',
+                  type: 'RectangleImage'
+                },
+                {
+                  propName: 'caption',
+                  type: 'Text',
+                  styleObj: {
+                    color: 'cornflowerblue'
+                  },
+                  classes: 'strong-text'
+                },
+                {
+                  propName: '__',
+                  type: 'ActLikeShare'
+                }
+                ]
+              }
+            }
+            onClick={this.actEvent}
+          />
+        </div>
+      </div>
     )
   }
 }
