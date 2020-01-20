@@ -53,9 +53,16 @@ export default class App extends Component {
       <ExampleNewsfeed 
        id='id'
        api='https://jsonplaceholder.typicode.com/todos'
-       layout={ 
-         {title:"TextBold"} 
+       layout={
+              {
+            classes: 'main-list',
+            items: [{
+              propName: 'title',
+              type: 'TextBold'
+            }                
+          ]
         }
+       }
       />
     )
   }
@@ -69,7 +76,7 @@ export default class App extends Component {
 ## Work With Layouts
 In most cases, we all want to display more information and in different orders. This newsfeed component supports you in having many standard layouts on the newsfeed.
 
-The layout is designed as an `json object` with the `key` from your API object, and the `value` is the component type that we have already created for you.
+The layout is designed as an `json object` with the items property used to indicate the items to be inserted in each list element. Each item has a `propName` property (`key name` from your API object), and a `type` property (component type that we have already created for you).
 
 ##### Overview 
 
@@ -105,13 +112,26 @@ export default class App extends Component {
       <ExampleNewsfeed 
        id='id'
        api='http://5dea7b020710f800142103a7.mockapi.io/posts'
-       layout={ 
-         {
-           name:"TextBold", // 1 
-           caption:"Paragraph",  //  2
-           imageUrl:"RectangleImage"  // 3 
-         } 
+       layout={
+              {
+            classes: 'main-list',
+            items: [{
+              propName: 'name',
+              type: 'TextBold',
+              styleObj: {
+                color: 'cornflowerblue'
+              },
+              classes: 'strong-text'
+            }, {
+              propName: 'caption',
+              type: 'Paragraph'
+            }, {
+              propName: 'imageUrl',
+              type: 'RectangleImage'
+            }                      
+          ]
         }
+       }
       />
     )
   }
@@ -126,12 +146,17 @@ export default class App extends Component {
 In some cases, you do not want a name and caption next to each other. With this component, you can display a name, picture, or caption by adjusting the layout object.
 
 ```javascript
-{
-  name:"TextBold", // 1
-  imageUrl:"RectangleImage", // 3
-  caption:"Paragraph" // 2
-} 
-      
+[{
+    propName: 'name', // 1
+    type: 'TextBold'
+  }, {
+    propName: 'imageUrl', // 3
+    type: 'RectangleImage'
+  }, {
+    propName: 'caption', // 2
+    type: 'Paragraph'
+  }                    
+]      
 ```
 ##### Result
 <img src='http://vnsdev.com/npm/newsfeed-9x/ex2_1.png'>
@@ -144,12 +169,20 @@ We have designed a list of component types for you to use; ensure to follow the 
  
 ```javascript
 
-layout={ 
+layout={
   {
-    avatar_name_createdAt: "AvatarNameDate",
-    imageUrl: "RectangleImage",
-    caption: "Paragraph"
-  } 
+     items: [{
+       propName: 'avatar_name_createdAt',
+       type: 'AvatarNameDate'
+     }, {
+       propName: 'imageUrl',
+       type: 'RectangleImage'
+     }, {
+       propName: 'caption',
+       type: 'Paragraph'
+     }                      
+   ]
+ }
 }
 ```
 ##### Result
@@ -183,13 +216,21 @@ pagination='offset'
   api='http://5dea7b020710f800142103a7.mockapi.io/page_[[]]'
   start='1'
   pagination='offset'
-  layout={ 
-    {
-      avatar_name_createdAt:"AvatarNameDate",
-      imageUrl:"RectangleImage",
-      caption:"Paragraph"
-    } 
-  }
+  layout={
+  {
+     items: [{
+       propName: 'avatar_name_createdAt',
+       type: 'AvatarNameDate'
+     }, {
+       propName: 'imageUrl',
+       type: 'RectangleImage'
+     }, {
+       propName: 'caption',
+       type: 'Paragraph'
+     }                      
+   ]
+ }
+}
 />
 ```
 
@@ -237,11 +278,15 @@ For some reason, your API returns a JSON file with the information of the reques
   dataPoint='data'
   start='1'
   pagination='offset'
-  layout={ 
-    {
-      email:"Paragraph"
-    } 
-  }
+  layout={
+  {
+     items: [{
+       propName: 'email',
+       type: 'Paragraph'
+     }                      
+   ]
+ }
+}
 />
 ```
 ##### Infinity Scroll (option)
@@ -273,15 +318,25 @@ export default class App extends Component {
        start='1'
        pagination='offset'
        infinityScroll='true'
-       layout={ 
-         {
-           avatar_name_createdAt:"AvatarNameDate",
-           imageUrl:"RectangleImage",
-           caption:"Paragraph",
-           __:"ActLikeShare"
-         } 
+       layout={
+        {
+           items: [{
+             propName: 'avatar_name_createdAt',
+             type: 'AvatarNameDate'
+           }, {
+             propName: 'imageUrl',
+             type: 'RectangleImage'
+           }, {
+             propName: 'caption',
+             type: 'Paragraph'
+           }, {
+             propName: '__',
+             type: 'ActLikeShare'
+           }                       
+         ]
         }
-      onClick={this.actEvent}
+       }
+       onClick={this.actEvent}
       />
     )
   }
