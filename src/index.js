@@ -65,7 +65,7 @@ export default class Feeds extends Component {
 
       // mapping ID 
       data = this.modifyID(data);
-      var __data = this.state.data;
+      let __data = this.state.data;
       __data = [...__data,...data];
 
       // update data to state 
