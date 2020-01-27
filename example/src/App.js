@@ -17,7 +17,7 @@ export default class App extends Component {
        pagination='offset'
        infinityScroll='true'
        layout={ 
-         {
+         { 
            avatar_name_createdAt:"AvatarNameDate",
            imageUrl:"RectangleImage",
            caption:"TextBold",
