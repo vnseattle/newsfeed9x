@@ -10,8 +10,4 @@ workflows:
   welcome:
     # Run the welcome/run job in its own container
     jobs:
-       build:
-        filters:
-            branches:
-              only:
-                - development
+      - welcome/run
