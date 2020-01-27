@@ -121,7 +121,7 @@ export default class Feeds extends Component {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
     const scrolled = winScroll / height;
-    return scrolled*100
+    return (scrolled*100)
   }
 
    // handle the scrolling 
