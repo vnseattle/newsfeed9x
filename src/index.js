@@ -35,7 +35,7 @@ export default class Feeds extends Component {
   }
 
   // out of page 
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     this._isMounted = false;
   }
 
