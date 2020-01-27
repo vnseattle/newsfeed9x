@@ -3,7 +3,7 @@
  * Author: Henry Nguyen 
  * Version : 1.x Jan 2020
  * Display cards, control scrollers
- *********************************************************/
+ **********************************************************/
 
 import React, { Component } from 'react'
 import Card from './card'
