@@ -1,7 +1,7 @@
 /***********************************************************
  * Index of newsfeed-9x library for ReactJS 
  * Author: Henry Nguyen 
- * Version : 1.2 Jan 2020
+ * Version : 1.3 Jan 2020
  * Display cards, control scrollers
  **********************************************************/
 
