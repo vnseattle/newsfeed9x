@@ -3,6 +3,7 @@
  * Author: Henry Nguyen 
  * Version : 1.3 Jan 2020
  * Display cards, control scrollers
+ * Modify layout
  **********************************************************/
 
 import React, { Component } from 'react'
