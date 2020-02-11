@@ -4,12 +4,14 @@ import style from './style.css'
 
 class TextLight extends Component {
 
-    render(){
-        var {id,i, content} = this.props;
+    render() {
+        var { id, i, content, styleObj } = this.props;
+        const customClasses = this.props.classes ? ' ' + this.props.classes : '';
         return (
-            <div key={id+"_"+i} 
-            className={style.textLight} 
-            onClick={this.props.onClick} >{content}</div>
+            <div key={id + "_" + i}
+                className={style.textLight + customClasses}
+                style={styleObj}
+                onClick={this.props.onClick} >{content}</div>
         )
     }
 }

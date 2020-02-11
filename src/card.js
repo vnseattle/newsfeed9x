@@ -19,41 +19,34 @@ class Card extends Component {
     render(){
 
         var {struct,data,id} = this.props;
-        var types = []; // types of the components 
-        var keys = [];  // the keys from api 
-
-        // Layout analysis 
-        for(let [key, value] of Object.entries(struct)){
-            keys.push(key);
-            types.push(value);
-        }
+        const { items, classes } = struct;
         
         return (
 
-                    <div id={'card_'+id}  data-type='CARD' data-id={id} className={styles.card} >
+                    <div id={'card_'+id}  data-type='CARD' data-id={id} className={styles.card + ' list-item ' + classes} >
                         {
-                            types.map((type,i) => {
-                                if( type==='AvatarNameDate'){
+                            items.map((item,i) => {
+                                if( item.type ==='AvatarNameDate'){
                                     return ( 
-                                    <AvatarNameDate key={id+"_"+i}  id={id} i={i} keyData={keys} data={data} 
+                                    <AvatarNameDate key={id+"_"+i}  id={id} i={i} {...item} keyData={item.propName} data={data} 
                                     onClick={this.props.onClick}/>)
-                                }else if( type==='TextBold'){ 
+                                }else if( item.type ==='TextBold'){ 
                                     return ( 
-                                    <TextBold key={id+"_"+i}  id={id} i={i} content={data[keys[i]]} />)
-                                }else if( type==='Text'){ 
+                                    <TextBold key={id+"_"+i}  id={id} i={i} {...item} content={data[item.propName]} />)
+                                }else if( item.type ==='Text'){ 
                                     return ( 
-                                    <Text key={id+"_"+i}  id={id} i={i} content={data[keys[i]]} />)
-                                }else if( type==='RectangleImage'){ 
+                                    <Text key={id+"_"+i}  id={id} i={i} {...item} content={data[item.propName]} />)
+                                }else if( item.type ==='RectangleImage'){ 
                                     return ( 
-                                    <RectangleImage key={id+"_"+i}  id={id} i={i} src={data[keys[i]]}  
+                                    <RectangleImage key={id+"_"+i}  id={id} i={i} {...item} src={data[item.propName]}  
                                     onClick={this.props.onClick} />  )
-                                }else if( type==='Paragraph'){ 
+                                }else if( item.type ==='Paragraph'){ 
                                     return ( 
-                                    <Paragraph key={id+"_"+i}  id={id} i={i} content={data[keys[i]]}  
+                                    <Paragraph key={id+"_"+i}  id={id} i={i} {...item} content={data[item.propName]}  
                                     onClick={this.props.onClick}/>)
-                                }else if( type==='ActLikeShare'){ 
+                                }else if( item.type ==='ActLikeShare'){ 
                                     return ( 
-                                    <ActLikeShare key={id+"_"+i}  id={id} i={i} 
+                                    <ActLikeShare key={id+"_"+i} id={id} i={i} {...item}
                                     onClick={this.props.onClick}/>)
                                 }  
                             })
